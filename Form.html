@@ -1,0 +1,39 @@
+<!--/*
+*@Filename:Form.html
+*@Date:16-11-2016
+*@Purpose:creating form
+*@Created By:Shraddha Mane
+*/-->
+<!DOCTYPE>
+<html>
+	<head>
+			<script>
+			function display()
+			{
+				/*document.getElementById("name").innerHTML = "You entered Name: " + document.myForm.Name.value;
+				document.getElementById("age").innerHTML = "You entered Age: " + document.myForm.Age.value;
+				document.getElementById("rollno").innerHTML = "You entered Roll No: " + document.myForm.Roll_Number.value;*/
+				var Name = document.getElementById("Name").value;
+				var Age = document.getElementById("Age").value;
+				var Roll_Number = document.getElementById("Roll_Number").value;
+				
+				localStorage.setItem("Name", Name);
+				localStorage.setItem("Age",Age);
+				localStorage.setItem("Roll_Number",Roll_Number);
+			}
+		</script>
+	</head>
+	<body>
+		<title>Form</title>
+		<form name ="myForm" onsubmit="display();" action ="data.html" target = "_blanck" >
+			Name:<br>
+			<input type = "text" name = "Name" id = "Name"><br>
+			Age:<br>
+			<input type = "number" name = "Age" id="Age"><br>
+			Roll Number:<br>
+			<input type = "number" name = "Roll_Number" id = "Roll_Number"><br>
+			<input type = "Submit" value ="Submit">
+		<form>
+
+	</body>
+</html>

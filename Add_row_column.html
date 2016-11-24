@@ -1,0 +1,50 @@
+<!--/*
+*@Filename:Add_row_column.html
+*@Date:16-11-2016
+*@Purpose:adding row and column
+*@Created By:Shraddha Mane
+*/-->
+<!DOCTYPE>
+<html>
+	<body>
+		<style>
+			table, td{
+			border: 1px solid black;
+			}
+		</style>
+		<button id ="addr" onclick ="addRow()">Add row</button>
+		<button id ="addc" onclick="addColumn()">Add column</button>
+		<button id ="deleter" onclick = "DeleteRow()">Delete row</button>
+		<button id ="deletec" onclick ="deleteColumn()">Delete column</button>
+		<table id = "table">
+			<tr id = "row">
+				<td> First cell</td>
+				<td>Second cell</td>
+			</tr>
+		</table>
+		<script>
+			function addColumn()
+			{
+				var row = document.getElementById("row");
+				var x = row.insertCell(-1);
+				x.innerHTML = "NEW CELL";
+			}
+			function addRow()
+			{
+				var table = document.getElementById("table");
+				var x = table.insertRow(-1);
+				x.innerHTML = "NEW ROW";
+			}
+			function deleteColumn()
+			{
+				var row = document.getElementById("row");
+				var x = row.deleteCell(-1);
+			}
+			function DeleteRow()
+			{
+				var table = document.getElementById("table");
+				var x = table.deleteRow(-1);
+			}
+		</script>
+	</body>
+</html>

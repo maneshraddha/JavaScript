@@ -1,0 +1,39 @@
+<!--/*
+*@Filename:1stjs_code.html
+*@Date:12-11-2016
+*@Purpose:learn js
+*@Created By:Shraddha Mane
+*/-->
+<!DOCTYPE>
+<html>
+<head>
+	
+</body>
+</head>
+<body>
+
+	<p id="demo">This is 1st paragraph</p>
+	<p id="demo1"><p>
+	<p id="demo2">this 3rd para<p>
+	<p id="id1"><p>
+	<button type= "button" onclick="myFunction()">try me</button><br>
+	<button type="button" onclick="document.write(5+3)">click me</button><br>
+	<button type="button" onclick="document.getElementById('demo').innerHTML=5+9">Its Me!!!</button>
+	<script>
+		function myFunction()
+		{
+			document.getElementById("demo").innerHTML="PARAGRAPH CHANGED";
+		}
+		var d= new Date();
+		document.getElementById("id1").innerHTML = d.toLocaleTimeString()
+		//window.alert(5+6);
+		document.write(5+6);
+		var x;
+		//var y=10;
+		document.getElementById("demo1").innerHTML=x;
+		txt="What a ";
+		txt+="nice day"
+		document.getElementById("demo2").innerHTML=txt;	
+	</script>
+
+</html>

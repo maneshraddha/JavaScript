@@ -1,0 +1,47 @@
+<!--/*
+*@Filename:JSON_Read.html
+*@Date:15-11-2016
+*@Purpose:learn json
+*@Created By:Shraddha Mane
+*/-->
+<DOCTYPE>
+	<html>
+		<body onload ="myData();">
+			<div id = "demo2"></div>
+			<div id="demo1"></div>
+			<div id ="id1"></div>
+			<div id ="id2"></div>
+			<div id ="id3"></div>
+
+		
+			<!--<button onclick="data()"> Click Me</button>-->
+			<script>
+				var myvar= setInterval(myTimer,1000);
+				var date = new Date();
+				document.getElementById("demo2").innerHTML = date.toDateString();
+				var text = [{"author_name":"Vikas Sharma","date published":"2015/08/12","publication": "Nirali Publication"},
+							{"author_name":"Shraddha Mane","date_published":"2015/01/2","publication": "Navanit Publication"},
+							{"author_name":"Chetan Bhagat","date_published":"2005/04/22","publication": "Techmax Publication"}];
+				
+				function myTimer()
+				{
+					var d= new Date();
+					document.getElementById("demo1").innerHTML = d.toLocaleTimeString();
+				}
+				function myData() {
+    				var i = Math.floor(Math.random()*10);
+    				if(text.length >= i)
+					{
+						document.getElementById("id1").innerHTML =text[i].author_name;
+						document.getElementById("id2").innerHTML =text[i].date_published;
+						document.getElementById("id3").innerHTML =text[i].publication;
+						setInterval(myData,1000);
+						
+					}
+    				
+				}
+				
+				
+			</script>
+		</body>
+	</html>

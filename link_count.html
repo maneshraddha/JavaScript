@@ -1,0 +1,35 @@
+<!--/*
+*@Filename:URL_Parts.html
+*@Date:15-11-2016
+*@Purpose:learn link count
+*@Created By:Shraddha Mane
+*/-->
+<DOCTYPE>
+	<html>
+		<body>
+			<title>Document</title>
+			<h3>Link count</h3>
+			<a href = "http://www.w3schools.com/html/"> W3 School html tuturial</a><br>
+			<a href = http://www.w3schools.com/js/>W3 School js tutorial</a><br>
+			<a href = "http://www.w3schools.com/html/"> W3 School html tuturial</a><br>
+			<a href = http://www.w3schools.com/js/>W3 School js tutorial</a><br>
+			<button onclick= "myFunction()">Click me</button>
+			<p id ="demo"></p>
+			<script>
+			 function myFunction ()
+				{
+					var links = document.getElementsByTagName("a");
+					var i;
+					var arr=[];
+					for(i=0;i<links.length;i++)
+					{
+						//arr.push(links[i]);
+						i++;
+					}
+					var hrefs = arr.length;
+					document.getElementById("demo").innerHTML= " Number of Links is " + i ;
+				}
+	
+			</script>
+		</body>
+	</html>

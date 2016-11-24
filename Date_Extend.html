@@ -1,0 +1,24 @@
+<!--/*
+*@Filename:date _extend.html
+*@Date:14-11-2016
+*@Purpose:Day_Extend
+*@Created By:Shraddha Mane
+*/-->
+<!DOCTYPE>
+<html>
+	<body>
+		<title>Date Extend</title>
+		<h4>Next day is</h4>
+		<p id = "demo"></p>
+		<script>
+			function getDay()
+			{
+				var d = new Date();
+				var days=["Sunday","Monday","Tuesday","Wednsday","Thurseday","Friday","Saterday"];
+				return  days[d.getDay()+1];
+			}
+			document.getElementById("demo").innerHTML =getDay();
+			
+		</script>
+	<body>
+</html>

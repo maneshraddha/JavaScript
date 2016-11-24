@@ -1,0 +1,35 @@
+<!--/*
+*@Filename:add_using_chaining.html
+*@Date:15-11-2016
+*@Purpose:learn chaining
+*@Created By:Shraddha Mane
+*/-->
+<DOCTYPE>
+	<html>
+		<body>
+			<title>Chain Method</title>
+			<h3>Addition using chaining</h3>
+			<p id ="ans"></p>
+			<script>
+				var operation = function (){
+					this.first= function(input1){
+						//var input1 =getElementById("first").innerHTML.value;
+						this.input1=input1;
+						return this;
+					}
+					this.second = function(input2){
+						//var input2 = getElementById("second").innerHTML.value;
+						this.input2=input2;
+						return this;
+					}
+					this.sum = function(){
+						var ans = this.input1 + this.input2;
+						document.getElementById("ans").innerHTML= ans;				
+					}
+					
+				}
+				var calculation = new operation();
+				calculation.first(3).second(4).sum();
+			</script>
+		</body>
+	</html>

@@ -1,0 +1,73 @@
+<!--/*
+*@Filename:Calculate_using_Currying.html
+*@Date:16-11-2016
+*@Purpose:learn currying
+*@Created By:Shraddha Mane
+*/-->
+<DOCTYPE>
+	<html>
+		<body>
+			<title>Currying</title>
+			<h3>CALCULATOR USING CURRYING</h3>
+			<p id="demo"></p>
+			<input id ="id1" type="number"><br>
+			<input id= "sign" type="text"><br>
+			<input id ="id2" type="number"><br>
+			<button onclick ="myFunction()()">Calculate</button>		
+			<p id ="ans">Answer is</p>
+			
+			<script>
+				var myFunction = function(){
+					var input1 = document.getElementById("id1").value;
+					var input2 = document.getElementById("id2").value;
+					var sign = document.getElementById("sign").value;
+					if(sign == "+")
+					{
+						return function()
+						{
+							var ans= Number(input1) + Number(input2);
+							document.getElementById("ans").innerHTML= ans;
+							
+						}
+					}
+					else if(sign == "-")
+					{
+						return function()
+						{
+							var ans= Number(input1) - Number(input2);
+							document.getElementById("ans").innerHTML= ans;
+							
+						}
+					}
+					else if(sign == "*")
+					{
+						return function()
+						{
+							var ans= Number(input1) * Number(input2);
+							document.getElementById("ans").innerHTML= ans;
+							
+						}
+					}
+					else if (sign =="/")
+					{
+						return function()
+						{
+							var ans= Number(input1) / Number(input2);
+							document.getElementById("ans").innerHTML= ans;
+							
+						}
+					}
+					else
+					{
+						return function()
+						{
+							document.getElementById("ans").innerHTML = "Invalid Operator";
+						}
+					}
+				};
+				//var curry = myFunction();
+				//console.log(myFunction()());
+				 
+			</script>
+		</body>
+	</html>

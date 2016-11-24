@@ -1,0 +1,107 @@
+<!--/*
+*@Filename:binaryTree.html
+*@Date:21-11-2016
+*@Purpose:learn prototype
+*@Created By:Shraddha Mane
+*/-->
+<!DOCTYPE>
+<html>
+    <body>
+        <title>Binary Search  Tree</title>
+        <h1 id ="id1">Binaray search Tree</h1>
+        <script>
+
+            function node(value){
+              this.value = value;
+              this.left = null;
+              this.right = null;
+            }
+            function binarySearchTree()
+            {
+                 this.root = null;
+            } 
+             binarySearchTree.prototype =
+            {
+                find : function(value)
+                {
+                    var current = new node(value);
+                
+                        current = this.root;
+                    
+                  
+                    while(current)
+                    {
+                        if(current.value == value)
+                        {
+                           return document.write( value + " Number Present <br>");
+                           // break;
+                        }
+                        else if(value < current.value)
+                        {
+                            current = current.left;
+                        }
+                        else if(value > current.value)
+                        {
+                            current = current.right;
+                        }  
+                    }
+                    document.write( value + " Number not Present <br>");
+                },
+                insert : function(value)
+                {
+                    
+                    var newNode = new node(value);
+                    var current;
+                    var parent;
+                    if(this.root == null)
+                    {
+                        this.root = newNode;
+                        return;
+                    }
+                    current = this.root;
+                    parent = null;
+                    while(true)
+                    {
+                        parent = current;
+                        if(value < current.value)
+                        {   
+                           
+                            current = current.left;
+                            if(current == null)
+                            {   
+                                parent.left = newNode;
+                                break;
+                            }    
+                            
+                            
+                        }
+                        else
+                        {   
+                            current = current.right;
+                            if(current == null)
+                            {   
+                                parent.right = newNode;
+                                break;
+                            }     
+                            
+                        }
+                    }
+
+                        
+                }
+                
+            }
+            var operation = new binarySearchTree();
+            operation.insert(25);
+            operation.insert(45);
+            operation.insert(28);
+            operation.insert(21);
+            operation.find(214);  
+            operation.find(218);
+            operation.find(25);
+            
+       
+        
+        </script>
+    </body>
+</html>

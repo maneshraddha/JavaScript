@@ -1,0 +1,105 @@
+<!--/*
+*@Filename:BST.html
+*@Date:21-11-2016
+*@Purpose:learn prototype
+*@Created By:Shraddha Mane
+*/-->
+<!DOCTYPE>
+<html>
+    <body>
+        <title>BST</title>
+        <h1 id ="id1">Binaray search tree using another method</h1>
+        <script>
+
+            function binarySearchTree ()
+            {
+                this.root = null;
+            }
+            binarySearchTree.prototype =
+            {
+                contains : function(value)
+                {
+
+                    var found = false;
+                    current = this.root;
+                    while(!found && current)
+                    {
+                        if(value < current.value)
+                        {
+                            current = current.left;
+                        }
+                        else if(value > current.value)
+                        {
+                            current = current.right;
+                        }
+                        else 
+                        {
+                            found = true;
+                           return document.write(value +" Number Present <br>");
+                        }
+               
+                    }
+                   return document.write(value +" Number Not Present <br>");
+                   
+                },
+                add : function(value)
+                {
+                    var node = {
+                     value: value,
+                     left: null,
+                     right: null
+                    },
+                    current;
+                    if(this.root ==null)
+                    {
+                        this.root = node;
+                        return;
+                    }
+                    else 
+                    {
+                        current = this.root;
+                    }
+                    while(true)
+                    {
+                        if(value < current.value)
+                        {
+                            if(current.left === null)
+                            {
+                                current.left = node;
+                                break;
+                            }
+                            else
+                            {
+                                current = current.left;
+                            }
+                        }
+                        else if(value > current.value)
+                        {
+                            if(current.right === null)
+                            {
+                                current.right = node;
+                          
+                            }
+                            else
+                            {
+                                current = current.right;
+                            }
+                        }
+                        else
+                            break;
+                    }
+                }
+                
+
+        };
+        var operation = new binarySearchTree();
+        operation.add(22);
+        operation.add(25);
+        operation.contains(22);
+        operation.contains(422);
+        
+
+        
+        </script>
+    </body>
+</html>

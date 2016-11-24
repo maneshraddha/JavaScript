@@ -1,0 +1,27 @@
+<!--/*
+*@Filename:URL_Parts.html
+*@Date:15-11-2016
+*@Purpose:learn url _parts
+*@Created By:Shraddha Mane
+*/-->
+<DOCTYPE>
+	<html>
+		<body>
+			<title>Document</title>
+			<button onclick="myUrl()">Click Me</button>
+		</body>
+			<script>
+				function myUrl()
+				{
+					var newUrl= window.location.protocol +  "://" + window.location.host +"/" + window.location.pathname;
+					document.write("newUrl: "+newUrl+ "<br>");
+					var protocol =  window.location.protocol;
+					document.write("protocol: " + protocol +"<br>");
+					var host = window.location.host;
+					document.write("host: " + host +"<br>");
+					var pathname =  window.location.pathname;
+					document.write("pathname: " + pathname +"<br>");
+				}
+			</script>
+		
+	</html>

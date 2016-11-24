@@ -1,0 +1,20 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<script>
+			function init()
+			{
+				var Name = localStorage.getItem("Name");
+				var Age = localStorage.getItem("Age");
+				var Roll_Number = localStorage.getItem("Roll_Number");
+
+
+				document.write("Name is:" + Name + " <br> Age is: " + Age+ " <br> Roll Number is: " + Roll_Number);
+				//documnet.write(Age);
+				//documnet.write(Roll_Number);
+			}
+		</script>
+	</head>
+	<body onload = "init()">
+	</body>
+</html>

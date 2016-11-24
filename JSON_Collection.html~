@@ -1,0 +1,74 @@
+<!--/*
+*@Filename:json collection.html
+*@Date:23-11-2016
+*@Purpose:modify json
+*@Created By:Shraddha Mane
+*/-->
+<!DOCTYPE>
+<html>
+    <body>	
+		<title>JSON Modify</title>
+		<h3 id = "demo">JSON OBJECTS</h3>
+		<script>
+
+			var collection = 
+			{
+				"1245": 
+				{
+					"artist": "Robert Palmer",
+					"tracks": []
+				},
+				"2468":
+				{
+					"album": "1999",
+					"artist": "Prince",
+					"tracks": 
+					[
+						"1999",
+						"Little Red Corvette"
+					]
+				},
+				"2548": 
+				{
+					"album": "Slippery When Wet",
+					"artist": "Bon Jovi",
+					"tracks": 
+					[
+						"Let It Rock",
+						"You Give Love a Bad Name"
+					]
+				},
+				"5439": 
+				{
+					"album": "ABBA Gold"
+				}
+			}
+			function updateData(id, property, value)
+			{
+				if(property ==="tracks" && value !== "")
+				{
+					if(collection[id][property])
+					{
+						collection[id][property].push(value);
+					}
+					else
+					{
+						collection[id][property] = value;
+					}
+				}
+				else if(value !== "")
+				{
+					collection[id][property] = value;
+				}
+				else if(value === "")
+				{
+					delete collection[id][property];
+				}
+				
+				return collection;
+			}
+			updateData(5439, "tracks", "steve");
+			console.log(collection);
+		</script>
+	</body>
+</html>
