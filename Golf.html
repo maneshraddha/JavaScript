@@ -1,0 +1,60 @@
+<!--/*
+*@Filename:Golf.html
+*@Date:26-11-2016
+*@Purpose:Golf
+*@Created By:Shraddha Mane
+*/-->
+<DOCTYPE>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Golf Game</title>
+  </head>
+  <body>
+    <input type="number" name="par"  id="par"><br>
+    <input type="number" name="stroke" id="stroke"><br>
+    <button type="button" name="button" onclick="Result()">Click Me For Result</button><br>
+    <script type="text/javascript">
+    par= document.getElementById("par").value;
+    stroke= document.getElementById("stroke").value;
+      function Game(par, stroke)
+      {
+        if(stroke == 1)
+        {
+          return "Hole-in-one!";
+        }
+        else if(stroke <= par - 2)
+        {
+          return "Eagle";
+        }
+        else if(stroke == par - 1)
+        {
+          return "Birdie";
+        }
+        else if(stroke == par)
+        {
+          return "par";
+        }
+
+        else if(stroke == par + 1)
+        {
+          return "Bogey";
+        }
+        else if(stroke == par + 2)
+        {
+          return "Double Bogey";
+        }
+        else if(stroke >= par + 3)
+        {
+          return "Go Home!";
+        }
+      }
+      function Result()
+        {
+          document.write(Game(par, stroke));
+        }
+
+    </script>
+  </body>
+</html>

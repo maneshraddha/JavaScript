@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vehicle</title>
+  </head>
+  <body>
+    <h3>Properties are:</h3>
+    <script type="text/javascript">
+      var vehicle = function( maxSpeed,type,displacement )
+      {
+        this.maxSpeed = maxSpeed;
+        this.type = type;
+        this.displacement = displacement;
+      }
+      vehicle.prototype =
+      {
+        setMaxSpeed : function(maxSpeed)
+        {
+          this.maxSpeed = maxSpeed;
+        },
+        setType : function(type)
+        {
+          this.type = type;
+        },
+        setDisplacement : function(displacement)
+        {
+          this.displacement = displacement;
+        }
+
+      };
+      var bike = new vehicle(200,"bike",20);
+      bike.getSpeed = function()
+      {
+        return this.maxSpeed;
+      }
+      document.write("Speed before setting is:" + bike.maxSpeed);
+      document.write("<br>");
+      bike.setMaxSpeed(1000);
+      document.write("Speed after setting" +   bike.maxSpeed + "<br>");
+
+
+      document.write("type before setting is:" + bike.type);
+      document.write("<br>");
+      bike.setType("Scooty");
+      document.write("Type after setting is:" + bike.type);
+      document.write("<br>");
+
+
+      document.write("dispalcement before setting is:" + bike.displacement);
+      document.write("<br>");
+      bike.setDisplacement(50);
+      document.write("dispalcement after setting is:" + bike.displacement);
+      document.write("<br>");
+
+      document.write(bike.getSpeed() + "<br>");
+    </script>
+  </body>
+</html>
