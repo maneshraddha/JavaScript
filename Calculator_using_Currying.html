@@ -13,9 +13,9 @@
 			<input id ="id1" type="number"><br>
 			<input id= "sign" type="text"><br>
 			<input id ="id2" type="number"><br>
-			<button onclick ="myFunction()()">Calculate</button>		
+			<button onclick ="myFunction()()">Calculate</button>
 			<p id ="ans">Answer is</p>
-			
+
 			<script>
 				var myFunction = function(){
 					var input1 = document.getElementById("id1").value;
@@ -27,7 +27,7 @@
 						{
 							var ans= Number(input1) + Number(input2);
 							document.getElementById("ans").innerHTML= ans;
-							
+
 						}
 					}
 					else if(sign == "-")
@@ -36,7 +36,7 @@
 						{
 							var ans= Number(input1) - Number(input2);
 							document.getElementById("ans").innerHTML= ans;
-							
+
 						}
 					}
 					else if(sign == "*")
@@ -45,7 +45,7 @@
 						{
 							var ans= Number(input1) * Number(input2);
 							document.getElementById("ans").innerHTML= ans;
-							
+
 						}
 					}
 					else if (sign =="/")
@@ -54,7 +54,7 @@
 						{
 							var ans= Number(input1) / Number(input2);
 							document.getElementById("ans").innerHTML= ans;
-							
+
 						}
 					}
 					else
@@ -67,7 +67,7 @@
 				};
 				//var curry = myFunction();
 				//console.log(myFunction()());
-				 
+
 			</script>
 		</body>
 	</html>

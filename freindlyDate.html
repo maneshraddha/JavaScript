@@ -1,0 +1,108 @@
+<!--/*
+*@Filename:freindlyDate.html
+*@Date:29-11-2016
+*@Purpose:Date concept
+*@Created By:Shraddha Mane
+*/-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Freindly Date</title>
+  </head>
+  <body>
+    <h3>Freindly Date</h3>
+    <input type="text" name="" id ="date1">
+    <br>
+    <input type="text" name="" id ="date2">
+    <br>
+    <button type="button" name="button" onclick="runFunction()">See Freindly Date</button>
+
+    <script type="text/javascript">
+      var stringDate1 = document.getElementById("date1").value;
+      var stringDate2 = document.getElementById("date2").value;
+      function makeFriendlyDates(date1, date2)
+      {
+        //take all months in array
+        var months = ["January","February","March","April","May","June","July","Augast","September","October","November","December"];
+
+        var datesplit1 = date1.split("-");  //split given date by user
+        var datesplit2 = date2.split("-");
+
+        var d = new Date();
+
+        var convertDate1 = ordinal(datesplit1[2]); //take suffix for ordinal date
+        var convertDate2 = ordinal(datesplit2[2]);
+
+        if(datesplit1[0] == datesplit2[0] && datesplit1[1] == datesplit2[1] && datesplit1[2] == datesplit2[2])
+        {
+          document.write("Both Dates are same " + datesplit1[0] + " " + months[datesplit1[1]-1] + " " + datesplit1[2]);
+        }
+
+        
+            //if(both years equals to current year)
+        else if(datesplit2[0] && datesplit1[0] == d.getFullYear())
+        {
+              //if(months in current year are equal)
+          if(datesplit1[1] == datesplit2[1])
+          {
+              document.write(months[datesplit1[1]-1] + " " + datesplit1[2] + convertDate1 + " , " + datesplit2[2] + convertDate2);
+          }
+          else
+          {
+              document.write(months[datesplit1[1]-1] + " " + datesplit1[2] + convertDate1 + ", " + months[datesplit2[1]-1] + " " + datesplit2[2] + convertDate2);
+          }
+        }
+
+
+          //if(given years are euqal)
+        else if(datesplit1[0] == datesplit2[0])
+        {
+          //if(months are equal)
+          if (datesplit1[1] == datesplit2[1])
+          {
+              document.write(datesplit1[0] + " "  + months[datesplit1[1]-1] + " " + datesplit1[2] + convertDate1 + ", " +  datesplit2[2] + convertDate2);
+          }
+          else
+          {
+              document.write(datesplit1[0] + " "  + months[datesplit1[1]-1] + " " + datesplit1[2] + convertDate1 + ", " + months[datesplit2[1]-1] + " " +  datesplit2[2] + convertDate2);
+          }
+        }
+
+
+        else
+        {
+          document.write(datesplit1[0] + " " + months[datesplit1[1]-1] + " " + datesplit1[2] + "" + convertDate1 + ","  + datesplit2[0] + " " + months[datesplit2[1]-1] + " " + datesplit2[2] + convertDate2);
+        }
+
+      }
+      //function for ordinal date
+      var ordinal = function (date)
+      {
+          if (date == 1)
+          {
+              return 'st';
+          }
+          else if(date == 2)
+          {
+              return 'nd';
+          }
+          else if(date == 3)
+          {
+            return 'rd';
+          }
+         else
+         {
+           return 'th';
+         }
+
+    }
+    function runFunction()
+    {
+      makeFriendlyDates(stringDate1,stringDate2 );
+    }
+
+
+    </script>
+  </body>
+</html>
